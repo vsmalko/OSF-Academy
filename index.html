@@ -4,215 +4,267 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>OSF Academy</title>
     <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/all.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    
+    <link rel="stylesheet" href="css/new.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
-
-    <header>
-        <div class="header__logo">
-        <img src="images/logo.png" alt="" class="logo"/>
+    <!-- fullscreen header starts-->
+    <header class="header--fullscreen">
+      <div class="header__logo">
+        <img src="images/logo.png" alt="" class="logo" />
         <h1>OSF</h1>
         <p>Academy</p>
-    </div>
-    <ul><li>Services <ul>
+      </div>
+      <ul>
         <li>
-            Accessories</li>
+          Services
+          <ul>
+            <li>Accessories</li>
             <li>Alcohol</li>
             <li>Art</li>
             <li>Books</li>
             <li>Drink</li>
-    </ul></li>
-    <li>Company</li>
-<li>Library</li>
-<li>Contact Us</li>
-<li>EN <ul>
-    <li>UA</li>
-    <li>RO</li>
-    <li>PL</li>
-</ul></li>
-<li>$ US <ul>
-    <li>&euro; EUR</li>
-    <li>&pound;GBP</li>
-    <li>JPY&yen;</li>
-</ul></li>
-</ul>
-<ul class="header__icons">
-    <li><i class="fas fa-search"></i></li>
-<li><i class="far fa-user"></i></li>
-<li><i class="far fa-heart"></i></li>
-<li><i class="fas fa-shopping-bag"></i></li>
-</ul>
-    </header>
-
-    <header class="header--mobile">
-        <img src="images/hamburger.svg" alt="" class="hamburger">
-      <img src="images/logo.png" alt="" class="logo--mobile"/>
-      
-    </header>
-    <!-- hamburger starts -->
-    <div class=""><ul> 
-        <li>Product Categories</li>
-        <ul class="">
-            <li>
-            Accessories</li>
-            <li>Alcohol</li>
-            <li>Art</li>
-            <li>Books</li>
-            <li>Drink</li>
-            <li>Electronics</li>
-            <li>Flowers & Plants</li>
-            <li>Food</li>
-        </ul>
-        <li>Sale
-            <ul class="">
-                <li>
-                Accessories</li>
-                <li>Alcohol</li>
-                <li>Art</li>
-                <li>Books</li>
-                <li>Drink</li>
-                <li>Electronics</li>
-                <li>Flowers & Plants</li>
-                <li>Food</li>
-            </ul>
+          </ul>
         </li>
-        </ul>
-        <img src="images/1.jpg" alt="" class="">
+        <li>Company</li>
+        <li>Library</li>
+        <li>Contact Us</li>
+        <li>
+          EN
+          <ul>
+            <li>UA</li>
+            <li>RO</li>
+            <li>PL</li>
+          </ul>
+        </li>
+        <li>
+          $ US
+          <ul>
+            <li>&euro; EUR</li>
+            <li>&pound;GBP</li>
+            <li>JPY&yen;</li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="header__icons">
+        <li><i class="fas fa-search"></i></li>
+        <li><i class="far fa-user"></i></li>
+        <li><i class="far fa-heart"></i></li>
+        <li><i class="fas fa-shopping-bag"></i></li>
+      </ul>
+    </header>
+    <!-- fullscreen header ends-->
+
+    <!-- mobile header starts-->
+    <header class="header--mobile">
+      <img src="images/hamburger.svg" alt="" class="hamburger__logo" />
+      <img src="images/logo.png" alt="" class="logo--mobile" />
+    </header>
+    <!-- mobile header ends-->
+
+    <!-- hamburger starts -->
+    <div class="hamburger__list">
+      <ul>
+        <li>PRODUCT CATEGORIES <img src="images/sort-down-solid.svg" alt="" class="hamburger__down_icon" /></li>
+        <li>Accessories</li>
+        <li>Alcohol</li>
+        <li>Art</li>
+        <li>Books</li>
+        <li>Drink</li>
+        <li>Electronics</li>
+        <li>Flowers & Plants</li>
+        <li>Food</li>
+      </ul>
+
+      <ul>
+        <li>SALE <img src="images/sort-down-solid.svg" alt="" class="hamburger__down_icon" /></li>
+        <li>Accessories</li>
+        <li>Alcohol</li>
+        <li>Art</li>
+        <li>Books</li>
+        <li>Drink</li>
+        <li>Electronics</li>
+        <li>Flowers & Plants</li>
+        <li>Food</li>
+      </ul>
+
+      <img src="images/1.jpg" alt="" class="hamburger__pic" />
     </div>
     <!-- hamburger ends -->
 
-    <!-- carousel banner starts -->
-    <div class="slideshow-container">
-
-        <!-- Full-width images with number and caption text -->
-        <div class="mySlides">
-          <img src="images/1.jpg" style="width:60%">
-          <div class="text">Control and manage any device with cloud solutions</div>
-          <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</div>
-          <button type="button" class="">VIEW MORE</button>
+    <!-- slideshow banner starts -->
+    <div class="slideshow__container">
+      <div class="slideshow__slides">
+        <img src="images/1.jpg" />
+        <div class="slideshow__heading">Control and manage any device with cloud solutions</div>
+        <div class="slideshow__caption">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
         </div>
-      
-        <div class="mySlides">
-          <img src="images/2.jpg" style="width:60%">
-          <div class="text">Control and manage any device with cloud solutions</div>
-          <button type="button" class="">VIEW MORE</button>
+        <div class="slideshow__btn__container">
+          <button type="button" class="slideshow__btn">VIEW MORE</button>
         </div>
-      
-        <div class="mySlides">
-          <img src="images/3.jpg" style="width:60%">
-          <div class="text">Control and manage any device with cloud solutions</div>
-        </div>
-      
-        <div class="mySlides">
-            <img src="images/4.jpg" style="width:60%">
-            <div class="text">Control and manage any device with cloud solutions</div>
-          </div>
-
-          <div class="mySlides">
-            <img src="images/5.jpg" style="width:60%">
-            <div class="text">Control and manage any device with cloud solutions</div>
-          </div>
-       
-      <!-- The circles -->
-      <div style="text-align:center">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-        <span class="dot" onclick="currentSlide(4)"></span>
-        <span class="dot" onclick="currentSlide(5)"></span>
       </div>
 
-
-      <div class="ads">
-<div class="">
-    <p>55%</p>
-    <p>SUMMER <br>SALES</p>
-</div>
-<h3>Follow us on Facebook</h3>
-<p>Control and manage any device with cloud solutions</p>
-<button type="button"><i class="fab fa-facebook-f"></i> FOLLOW</button>
+      <div class="slideshow__slides">
+        <img src="images/2.jpg" />
+        <div class="slideshow__heading">Control and manage any device with cloud solutions</div>
+        <div class="slideshow__caption">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+        </div>
+        <button type="button" class="">VIEW MORE</button>
       </div>
-<!-- carousel banner ends -->
 
-<!-- popular items start -->
-<div class="">
-    <p class="subtitle fancy"><span>Popular Items</span></p>
-    <div class="card" style="width: 18rem;">
-        <img src="images/item.jpg" class="card-img-top" alt="...">
+      <div class="slideshow__slides">
+        <img src="images/3.jpg" />
+        <div class="slideshow__heading">Control and manage any device with cloud solutions</div>
+        <div class="slideshow__caption">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+        </div>
+        <button type="button" class="">VIEW MORE</button>
+      </div>
+
+      <div class="slideshow__slides">
+        <img src="images/4.jpg" />
+        <div class="slideshow__heading">Control and manage any device with cloud solutions</div>
+        <div class="slideshow__caption">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+        </div>
+        <button type="button" class="">VIEW MORE</button>
+      </div>
+
+      <div class="slideshow__slides">
+        <img src="images/5.jpg" />
+        <div class="slideshow__heading">Control and manage any device with cloud solutions</div>
+        <div class="slideshow__caption">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+        </div>
+        <button type="button" class="">VIEW MORE</button>
+      </div>
+
+      <div class="slideshow__dots">
+        <span class="slideshow__dot" onclick="currentSlide(1)"></span>
+        <span class="slideshow__dot" onclick="currentSlide(2)"></span>
+        <span class="slideshow__dot" onclick="currentSlide(3)"></span>
+        <span class="slideshow__dot" onclick="currentSlide(4)"></span>
+        <span class="slideshow__dot" onclick="currentSlide(5)"></span>
+      </div>
+    </div>
+
+    <!-- <div class="ads">
+      <div class="">
+        <p>55%</p>
+        <p>SUMMER <br />SALES</p>
+      </div>
+      <h3>Follow us on Facebook</h3>
+      <p>Control and manage any device with cloud solutions</p>
+      <button type="button"><i class="fab fa-facebook-f"></i> FOLLOW</button>
+    </div> -->
+    <!-- slideshow banner ends -->
+
+    <!-- popular items start -->
+    <div class="popular_items">
+      <p class="popular_items__heading"><span>Popular Items</span></p>
+      <div class="popular_items__card card">
+        <img src="images/item.jpg" class="card-img-top" alt="..." />
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <p class="text-primary">$ 799.55</p>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the bulk of the card's content.
+          </p>
+          <p class="popular_items__card__price">$ 799.55</p>
         </div>
       </div>
-      <button>LOAD MORE <i class="fas fa-redo-alt"></i></button>
-</div>
-<!-- popular items end -->
+      <button class="popular_items__card__btn">LOAD MORE <i class="fas fa-redo-alt"></i></button>
+      <div class="slideshow__dots">
+        <span class="slideshow__dot" onclick="currentSlide(1)"></span>
+        <span class="slideshow__dot" onclick="currentSlide(2)"></span>
+        <span class="slideshow__dot" onclick="currentSlide(3)"></span>
+        <span class="slideshow__dot" onclick="currentSlide(4)"></span>
+        <span class="slideshow__dot" onclick="currentSlide(5)"></span>
+      </div>
+    </div>
+    <!-- popular items end -->
 
-<!-- full-width banner starts -->
-<div class="banner">
-    <h2>Banner OSF Theme</h2>
-    <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-</div>
-<!-- full-width banner ends -->
+    <!-- full-width banner starts -->
+    <div class="banner">
+      <h2>Banner OSF Theme</h2>
+      <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+    <!-- full-width banner ends -->
 
-<!-- featured products start -->
-<h2>Featured Products</h2>
-<p>These are some of our featured products</p>
+    <!-- featured products start -->
+    <section class="featured">
+      <h2>Featured Products</h2>
+      <p>These are some of our featured products</p>
+      <!-- use jquery here -->
+      <!-- cards -->
 
-<!-- featured products end -->
+      <!-- featured products end -->
+    </section>
+    <!-- benefits content start -->
+    <div class="">
+      <img src="" alt="" />
+      <h3>FOCUS</h3>
+      <p>Our unwavering focus on superior service delivery and building next generation competencies</p>
+      <h3>METHOD</h3>
+      <p>A standardized methodology designed to deliver business results and predictable costs</p>
+      <h3>KNOWLEDGE</h3>
+      <p>
+        A highly skilled, proactive workforce that reliably improves each client's ROI while mitigating their business
+        risk
+      </p>
+    </div>
+    <!-- benefits content end -->
 
-<!-- benefits content start -->
-<div class="">
-<img src="" alt="">
-<h3>FOCUS</h3>
-<p>Our unwavering focus on superior service delivery and building next generation competencies</p>
-<h3>METHOD</h3>
-<p>A standardized methodology designed to deliver business results and predictable costs</p>
-<h3>KNOWLEDGE</h3>
-<p>A highly skilled, proactive workforce that reliably improves each client's ROI while mitigating their business risk</p>
-</div>
-<!-- benefits content end -->
-
-<!-- footer start -->
-<p>&copy;Copyright 2019.<br>
-    All Rights Reserved.
-</p>
-<ul><li>CONTACT</li>
-    <p>Headquarters: <br>
-5600, Blvd. des Galeries, Bur 530 <br>
-Quebec, Quebec G2K 2H6
+    <!-- footer start -->
+    <p>
+      &copy;Copyright 2019.<br />
+      All Rights Reserved.
     </p>
-    <p>contact@osf-global.com</p>
-    <p>+1 (888) 548-4344</p>
-<li>CATEGORIES</li>
-<li>ABOUT</li>
-</ul>
-<ul><li><i class="fab fa-facebook-f"></i></li>
-<li><i class="fab fa-google-plus-g"></i></li>
-<li><i class="fab fa-twitter"></i></li>
-<li><i class="fab fa-pinterest-p"></i></li>
-
-</ul>
-<!-- footer end -->
-
-<!-- mobile icons start -->
-<div class="">
     <ul>
-    <li><i class="fas fa-search"></i></li>
-<li><i class="far fa-user"></i></li>
-<li><i class="far fa-heart"></i></li>
-<li><i class="fas fa-shopping-bag"></i></li>
-</ul>
-</div>
-<!-- mobile icons end -->
+      <li>CONTACT</li>
+      <p>
+        Headquarters: <br />
+        5600, Blvd. des Galeries, Bur 530 <br />
+        Quebec, Quebec G2K 2H6
+      </p>
+      <p>contact@osf-global.com</p>
+      <p>+1 (888) 548-4344</p>
+      <li>CATEGORIES</li>
+      <li>ABOUT</li>
+    </ul>
+    <ul>
+      <li><i class="fab fa-facebook-f"></i></li>
+      <li><i class="fab fa-google-plus-g"></i></li>
+      <li><i class="fab fa-twitter"></i></li>
+      <li><i class="fab fa-pinterest-p"></i></li>
+    </ul>
+    <!-- footer end -->
 
-<!-- scripts -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <!-- mobile icons start -->
+    <div class="">
+      <ul>
+        <li><i class="fas fa-search"></i></li>
+        <li><i class="far fa-user"></i></li>
+        <li><i class="far fa-heart"></i></li>
+        <li><i class="fas fa-shopping-bag"></i></li>
+      </ul>
+    </div>
+    <!-- mobile icons end -->
+
+    <!-- scripts -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
     <script src="js/all.js"></script>
     <script src="https://kit.fontawesome.com/86b430232a.js" crossorigin="anonymous"></script>
   </body>
