@@ -170,30 +170,73 @@
 
     <!-- popular items start -->
     <div class="popular_items">
-      <p class="popular_items__heading"><span>Popular Items</span></p>
+      <div class="popular__item">
+        <p class="popular_items__heading"><span>Popular Items</span></p>
+        <div class="popular_items__card card">
+          <img src="images/item1.jpg" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the bulk of the card's content.
+            </p>
+            <p class="popular_items__card__price">$ 799.55</p>
+          </div>
+        </div>
+      </div>
+
       <div class="popular_items__card card">
-        <img src="images/item.jpg" class="card-img-top" alt="..." />
+        <img src="images/item2.jpg" class="card-img-top" alt="..." />
         <div class="card-body">
           <p class="card-text">
             Some quick example text to build on the card title and make up the bulk of the card's content.
           </p>
-          <p class="popular_items__card__price">$ 799.55</p>
+          <p class="popular_items__card__price">$ 850.55</p>
         </div>
       </div>
+
+      <div class="popular_items__card card">
+        <img src="images/item3.jpg" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the bulk of the card's content.
+          </p>
+          <p class="popular_items__card__price">$ 450.55</p>
+        </div>
+      </div>
+
+      <div class="popular_items__card card">
+        <img src="images/item4.jpg" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the bulk of the card's content.
+          </p>
+          <p class="popular_items__card__price">$ 320.55</p>
+        </div>
+      </div>
+
+      <div class="popular_items__card card">
+        <img src="images/item5.jpg" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the bulk of the card's content.
+          </p>
+          <p class="popular_items__card__price">$ 967.55</p>
+        </div>
+      </div>
+
       <button class="popular_items__card__btn">LOAD MORE <i class="fas fa-redo-alt"></i></button>
-      <div class="slideshow__dots">
-        <span class="slideshow__dot" onclick="currentSlide(1)"></span>
-        <span class="slideshow__dot" onclick="currentSlide(2)"></span>
-        <span class="slideshow__dot" onclick="currentSlide(3)"></span>
-        <span class="slideshow__dot" onclick="currentSlide(4)"></span>
-        <span class="slideshow__dot" onclick="currentSlide(5)"></span>
+      <div class="popular_items__dots">
+        <span class="popular_items__dot"></span>
+        <span class="popular_items__dot" onclick="currentCard(2)"></span>
+        <span class="popular_items__dot" onclick="currentCard(3)"></span>
+        <span class="popular_items__dot" onclick="currentCard(4)"></span>
+        <span class="popular_items__dot" onclick="currentCard(5)"></span>
       </div>
     </div>
     <!-- popular items end -->
 
     <!-- full-width banner starts -->
     <div class="banner">
-      <h2>Banner OSF Theme</h2>
+      <h2 class="banner__heading">Banner OSF Theme</h2>
       <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     </div>
     <!-- full-width banner ends -->
@@ -207,53 +250,73 @@
 
       <!-- featured products end -->
     </section>
+
     <!-- benefits content start -->
-    <div class="">
-      <img src="" alt="" />
-      <h3>FOCUS</h3>
-      <p>Our unwavering focus on superior service delivery and building next generation competencies</p>
-      <h3>METHOD</h3>
-      <p>A standardized methodology designed to deliver business results and predictable costs</p>
-      <h3>KNOWLEDGE</h3>
-      <p>
-        A highly skilled, proactive workforce that reliably improves each client's ROI while mitigating their business
-        risk
-      </p>
+    <div class="benefits__container">
+      <div class="flex-row">
+        <img src="images/cart.svg" alt="" class="benefits__icons" />
+        <div class="flex-text">
+          <h3 class="benefits__headings">FOCUS</h3>
+          <p>Our unwavering focus on superior service delivery and building next generation competencies</p>
+        </div>
+      </div>
+
+      <div class="flex-row">
+        <div class="flex-text">
+          <h3 class="benefits__headings">METHOD</h3>
+          <p>A standardized methodology designed to deliver business results and predictable costs</p>
+        </div>
+        <img src="images/recycle.svg" alt="" class="benefits__icons" />
+      </div>
+
+      <div class="flex-row">
+        <img src="images/list.svg" alt="" class="benefits__icons" />
+        <div class="flex-text">
+          <h3 class="benefits__headings">KNOWLEDGE</h3>
+          <p>
+            A highly skilled, proactive workforce that reliably improves each client's ROI while mitigating their
+            business risk
+          </p>
+        </div>
+      </div>
     </div>
     <!-- benefits content end -->
 
     <!-- footer start -->
-    <p>
-      &copy;Copyright 2019.<br />
-      All Rights Reserved.
-    </p>
-    <ul>
-      <li>CONTACT</li>
+    <footer>
       <p>
-        Headquarters: <br />
-        5600, Blvd. des Galeries, Bur 530 <br />
-        Quebec, Quebec G2K 2H6
+        &copy; Copyright 2019.<br />
+        All Rights Reserved.
       </p>
-      <p>contact@osf-global.com</p>
-      <p>+1 (888) 548-4344</p>
-      <li>CATEGORIES</li>
-      <li>ABOUT</li>
-    </ul>
-    <ul>
-      <li><i class="fab fa-facebook-f"></i></li>
-      <li><i class="fab fa-google-plus-g"></i></li>
-      <li><i class="fab fa-twitter"></i></li>
-      <li><i class="fab fa-pinterest-p"></i></li>
-    </ul>
+      <ul>
+        <li>CONTACT</li>
+        <p>
+          Headquarters: <br />
+          5600, Blvd. des Galeries, Bur 530 <br />
+          Quebec, Quebec G2K 2H6
+        </p>
+        <p>contact@osf-global.com</p>
+        <p>+1 (888) 548-4344</p>
+        <li>CATEGORIES</li>
+        <li>ABOUT</li>
+      </ul>
+
+      <div class="flex-row footer__social__container">
+        <a href="#"><i class="fab fa-facebook-f footer__social"></i></a>
+        <a href="#"><i class="fab fa-google-plus-g footer__social"></i></a>
+        <a href="#"><i class="fab fa-twitter footer__social"></i></a>
+        <a href="#"><i class="fab fa-pinterest-p footer__social"></i></a>
+      </div>
+    </footer>
     <!-- footer end -->
 
     <!-- mobile icons start -->
-    <div class="">
+    <div class="mobile__icons">
       <ul>
-        <li><i class="fas fa-search"></i></li>
-        <li><i class="far fa-user"></i></li>
-        <li><i class="far fa-heart"></i></li>
-        <li><i class="fas fa-shopping-bag"></i></li>
+        <a href="#"><i class="fas fa-search mobile__icon"></i></a>
+        <a href="#"><i class="far fa-user mobile__icon"></i></a>
+        <a href="#"><i class="far fa-heart mobile__icon"></i></a>
+        <a href="#"><i class="fas fa-shopping-bag mobile__icon"></i></a>
       </ul>
     </div>
     <!-- mobile icons end -->
@@ -269,15 +332,3 @@
     <script src="https://kit.fontawesome.com/86b430232a.js" crossorigin="anonymous"></script>
   </body>
 </html>
-
-<!-- Header with hamburger menu and a logo
-    Inside ham: categories and sale with subcatergories, cahnges icon to x
-carousel from 5 pics with View more button. By clicking on the link redirect the user to Category landing page
-black div including carousel with popular items
- div with pic Full Width
- featured products div HIDDEN
-green icons
-footer
-social
-icons, hidden on full-width
-  -->
