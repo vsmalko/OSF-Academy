@@ -1,3 +1,5 @@
+//Slideshow
+
 let slideIndex = 1;
 showSlides(slideIndex);
 
@@ -26,6 +28,14 @@ function showSlides(n) {
   dots[slideIndex - 1].className += " active";
 }
 
+// Cards
+let cardIndex = 1;
+showCards(cardIndex);
+
+function currentCard(n) {
+  showCards((cardIndex = n));
+}
+
 function showCards(n) {
   let i;
   let cards = document.querySelectorAll(".popular_items__card");
@@ -45,6 +55,11 @@ function showCards(n) {
   cards[cardIndex - 1].style.display = "block";
   dots[cardIndex - 1].className += " active";
 }
+document.querySelectorAll(".popular_items__dot").forEach((item) => {
+  item.addEventListener("click", (event) => {
+    currentCard(cardIndex);
+  });
+});
 // let slideIndex = 0;
 // showSlides();
 
