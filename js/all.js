@@ -1,3 +1,7 @@
+//Initialize AOS library
+
+AOS.init();
+
 //Slideshow
 
 let slideIndex = 1;
@@ -77,13 +81,37 @@ document.querySelectorAll(".popular_items__dot").forEach((item) => {
 //   setTimeout(showSlides, 4000); // Change image every 4 seconds
 // }
 
-// onclicks;
+// Onclicks
 $(".hamburger__logo").on("click", function () {
   $(".hamburger__list").toggleClass("open");
 });
 
-// $(".hamburger__down_icon").on("click", function () {
-//   $(".hamburger__down_icon").toggleClass(".hamburger__up_icon");
-//   $(".hamburger__down_icon").removeClass(".hamburger__down_icon");
-//   $(".hamburger__list").addClass("open");
-// });
+$("#hamburger__list__title1").on("click", function () {
+  $("#down1").toggleClass("hamburger__up_icon");
+  $("#down1").toggleClass("hamburger__down_icon");
+  $("#hamburger__list1 a").toggleClass("open");
+});
+
+$("#hamburger__list__title2").on("click", function () {
+  $("#down2").toggleClass("hamburger__up_icon");
+  $("#down2").toggleClass("hamburger__down_icon");
+  $("#hamburger__list2 a").toggleClass("open");
+});
+
+$("#footer__list__title1").on("click", function () {
+  $("#down3").toggleClass("hamburger__up_icon");
+  $("#down3").toggleClass("hamburger__down_icon");
+  $("#footer__list1 p").toggleClass("open");
+});
+
+$("#footer__list__title2").on("click", function () {
+  $("#down4").toggleClass("hamburger__up_icon");
+  $("#down4").toggleClass("hamburger__down_icon");
+  $("#footer__list2 a").toggleClass("open");
+});
+
+$("#footer__list__title3").on("click", function () {
+  $("#down5").toggleClass("hamburger__up_icon");
+  $("#down5").toggleClass("hamburger__down_icon");
+  $("#footer__list3 a").toggleClass("open");
+});
