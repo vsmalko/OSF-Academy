@@ -18,54 +18,193 @@
   <body>
     <!-- fullscreen header starts-->
     <header class="header--fullscreen">
-      <div class="header__logo">
+      <div class="logo--fullscreen">
         <img src="images/logo.png" alt="" class="logo" />
         <h1>OSF</h1>
         <p>Academy</p>
       </div>
-      <ul>
-        <li>
+
+      <div class="header--fullscreen__list">
+        <p class="header--fullscreen__list__title services">
           Services
-          <ul>
-            <li>Accessories</li>
-            <li>Alcohol</li>
-            <li>Art</li>
-            <li>Books</li>
-            <li>Drink</li>
-          </ul>
-        </li>
-        <li>Company</li>
-        <li>Library</li>
-        <li>Contact Us</li>
-        <li>
+          <svg
+            class="down_icon"
+            id="down6"
+            version="1.1"
+            id="Layer_1"
+            focusable="false"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px"
+            y="0px"
+            viewBox="0 0 841.9 491.6"
+            enable-background="new 0 0 841.9 491.6"
+            xml:space="preserve"
+          >
+            <path
+              d="M70.8,0H771c63,0,94.6,76.2,50.1,120.7L470.9,470.9c-27.6,27.6-72.4,27.6-99.7,0L20.7,120.7
+         C-23.6,76.2,7.8,0,70.8,0z"
+            />
+          </svg>
+          <!-- <img src="images/sort-down-light.svg" alt="" class="down_icon" id="down6" /> -->
+        </p>
+
+        <a href="#" class="header--fullscreen__list__title">Company</a>
+        <a href="#" class="header--fullscreen__list__title">Library</a>
+        <a href="#" class="header--fullscreen__list__title">Contact Us</a>
+        <a href="#" class="header--fullscreen__list__title languages">
           EN
-          <ul>
-            <li>UA</li>
-            <li>RO</li>
-            <li>PL</li>
-          </ul>
-        </li>
-        <li>
+          <svg
+            class="down_icon"
+            id="down7"
+            version="1.1"
+            id="Layer_1"
+            focusable="false"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px"
+            y="0px"
+            viewBox="0 0 841.9 491.6"
+            enable-background="new 0 0 841.9 491.6"
+            xml:space="preserve"
+          >
+            <path
+              d="M70.8,0H771c63,0,94.6,76.2,50.1,120.7L470.9,470.9c-27.6,27.6-72.4,27.6-99.7,0L20.7,120.7
+         C-23.6,76.2,7.8,0,70.8,0z"
+            />
+          </svg>
+          <!-- <img src="images/sort-down-light.svg" alt="" class="down_icon" id="down7" -->
+        </a>
+        <div>
+          <a href="#" class="header--fullscreen__dropdown__list__item">UA</a>
+          <a href="#" class="header--fullscreen__dropdown__list__item">RO</a>
+          <a href="#" class="header--fullscreen__dropdown__list__item">PL</a>
+        </div>
+
+        <a href="#" class="header--fullscreen__list__title currency">
           $ US
-          <ul>
-            <li>&euro; EUR</li>
-            <li>&pound;GBP</li>
-            <li>JPY&yen;</li>
-          </ul>
-        </li>
-      </ul>
+          <svg
+            class="down_icon"
+            id="down8"
+            version="1.1"
+            id="Layer_1"
+            focusable="false"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px"
+            y="0px"
+            viewBox="0 0 841.9 491.6"
+            enable-background="new 0 0 841.9 491.6"
+            xml:space="preserve"
+          >
+            <path
+              d="M70.8,0H771c63,0,94.6,76.2,50.1,120.7L470.9,470.9c-27.6,27.6-72.4,27.6-99.7,0L20.7,120.7
+         C-23.6,76.2,7.8,0,70.8,0z"
+            />
+          </svg>
+          <!-- <img src="images/sort-down-light.svg" alt="" class="down_icon" id="down8" -->
+        </a>
+        <div>
+          <a href="#" class="header--fullscreen__dropdown__list__item">&euro; EUR</a>
+          <a href="#" class="header--fullscreen__dropdown__list__item">&pound;GBP</a>
+          <a href="#" class="header--fullscreen__dropdown__list__item">JPY&yen;</a>
+        </div>
+      </div>
+
       <ul class="header__icons">
-        <li><i class="fas fa-search"></i></li>
-        <li><i class="far fa-user"></i></li>
-        <li><i class="far fa-heart"></i></li>
-        <li><i class="fas fa-shopping-bag"></i></li>
+        <a href="#"><i class="fas fa-search"></i></a>
+        <a href="#"><i class="far fa-user"></i></a>
+        <a href="#"><i class="far fa-heart"></i></a>
+        <a href="#"><i class="fas fa-shopping-bag"></i></a>
       </ul>
     </header>
     <!-- fullscreen header ends-->
 
+    <!-- fullscreen header dropdown starts -->
+    <section class="header--fullscreen__dropdown">
+      <div class="header--fullscreen__dropdown__titles">
+        <h3 class="dropdown__title1">Product Categories</h3>
+        <h3 class="dropdown__title2">Sale</h3>
+      </div>
+
+      <div class="header--fullscreen__dropdown__containers">
+        <div class="header--fullscreen__dropdown__container">
+          <a href="#" class="header--fullscreen__dropdown__list__item">Accessories</a>
+          <a href="#" class="header--fullscreen__dropdown__list__item">Alcohol</a>
+          <a href="#" class="header--fullscreen__dropdown__list__item">Art</a>
+          <a href="#" class="header--fullscreen__dropdown__list__item">Books</a>
+          <a href="#" class="header--fullscreen__dropdown__list__item">Drink</a>
+          <a href="#" class="header--fullscreen__dropdown__list__item">Electronics</a>
+          <a href="#" class="header--fullscreen__dropdown__list__item">Flowers & Plants</a>
+          <a href="#" class="header--fullscreen__dropdown__list__item">Food</a>
+        </div>
+        <div class="header--fullscreen__dropdown__container">
+          <a href="#" class="header--fullscreen__dropdown__list__item">Gadgets</a>
+          <a href="#" class="header--fullscreen__dropdown__list__item">Garden</a>
+          <a href="#" class="header--fullscreen__dropdown__list__item">Grocery</a>
+          <a href="#" class="header--fullscreen__dropdown__list__item">Home</a>
+          <a href="#" class="header--fullscreen__dropdown__list__item">Jewelry</a>
+          <a href="#" class="header--fullscreen__dropdown__list__item">Kids & Baby</a>
+          <a href="#" class="header--fullscreen__dropdown__list__item">Men's Fashion</a>
+          <a href="#" class="header--fullscreen__dropdown__list__item">Mobile</a>
+        </div>
+        <div class="header--fullscreen__dropdown__container">
+          <a href="#" class="header--fullscreen__dropdown__list__item">Motorcycles</a>
+          <a href="#" class="header--fullscreen__dropdown__list__item">Movies</a>
+          <a href="#" class="header--fullscreen__dropdown__list__item">Music</a>
+          <a href="#" class="header--fullscreen__dropdown__list__item">Office</a>
+          <a href="#" class="header--fullscreen__dropdown__list__item">Pets</a>
+          <a href="#" class="header--fullscreen__dropdown__list__item">Romantic</a>
+          <a href="#" class="header--fullscreen__dropdown__list__item">Sport</a>
+          <a href="#" class="header--fullscreen__dropdown__list__item">Toys</a>
+        </div>
+        <div class="header--fullscreen__dropdown__container">
+          <a href="#" class="header--fullscreen__dropdown__list__item">Accessories</a>
+          <a href="#" class="header--fullscreen__dropdown__list__item">Alcohol</a>
+          <a href="#" class="header--fullscreen__dropdown__list__item">Art</a>
+          <a href="#" class="header--fullscreen__dropdown__list__item">Books</a>
+          <a href="#" class="header--fullscreen__dropdown__list__item">Drink</a>
+          <a href="#" class="header--fullscreen__dropdown__list__item">Electronics</a>
+          <a href="#" class="header--fullscreen__dropdown__list__item">Flowers & Plants</a>
+          <a href="#" class="header--fullscreen__dropdown__list__item">Food</a>
+        </div>
+        <img src="images/5.jpg" alt="" class="header--fullscreen__dropdown__image" />
+      </div>
+
+      <!-- </div> -->
+    </section>
+    <!-- fullscreen header dropdown ends -->
+
     <!-- mobile header starts-->
     <header class="header--mobile">
-      <img src="images/hamburger.svg" alt="" class="hamburger__logo" />
+      <svg
+        class="hamburger__logo"
+        version="1.1"
+        id="Layer_1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        viewBox="220 111.6 401.8 253"
+        enable-background="new 220 111.6 401.8 253"
+        xml:space="preserve"
+      >
+        <title>hamburger, more, options, menu</title>
+        <g>
+          <path
+            d="M607,223.2H234.9c-8.2,0-14.9,6.7-14.9,14.9c0,8.2,6.7,14.9,14.9,14.9H607c8.2,0,14.9-6.7,14.9-14.9
+       C621.9,229.9,615.2,223.2,607,223.2z"
+          />
+          <path
+            d="M234.9,141.4H607c8.2,0,14.9-6.7,14.9-14.9s-6.7-14.9-14.9-14.9H234.9c-8.2,0-14.9,6.7-14.9,14.9S226.7,141.4,234.9,141.4z
+       "
+          />
+          <path
+            d="M607,334.8H234.9c-8.2,0-14.9,6.7-14.9,14.9s6.7,14.9,14.9,14.9H607c8.2,0,14.9-6.7,14.9-14.9S615.2,334.8,607,334.8z"
+          />
+        </g>
+      </svg>
+
       <img src="images/logo.png" alt="" class="logo--mobile" />
     </header>
     <!-- mobile header ends-->
@@ -74,7 +213,7 @@
     <div class="hamburger__list">
       <ul>
         <li id="hamburger__list__title1">
-          PRODUCT CATEGORIES <img src="images/sort-down-white.svg" alt="" class="hamburger__down_icon" id="down1" />
+          PRODUCT CATEGORIES <img src="images/sort-down-white.svg" alt="" class="down_icon" id="down1" />
         </li>
         <div id="hamburger__list1">
           <a href="#" class="hamburger__list__item">Accessories</a>
@@ -90,7 +229,7 @@
 
       <ul>
         <li id="hamburger__list__title2">
-          SALE <img src="images/sort-down-white.svg" alt="" class="hamburger__down_icon" id="down2" />
+          SALE <img src="images/sort-down-white.svg" alt="" class="down_icon" id="down2" />
         </li>
         <div id="hamburger__list2">
           <a href="#" class="hamburger__list__item">Accessories</a>
@@ -307,7 +446,7 @@
       </p>
       <ul>
         <li class="footer__list__title" id="footer__list__title1">
-          CONTACT <img src="images/sort-down-grey.svg" alt="" class="hamburger__down_icon" id="down3" />
+          CONTACT <img src="images/sort-down-grey.svg" alt="" class="down_icon" id="down3" />
         </li>
         <div id="footer__list1">
           <p class="footer__list__item">
@@ -319,7 +458,7 @@
           <p class="footer__list__item">+1 (888) 548-4344</p>
         </div>
         <li class="footer__list__title" id="footer__list__title2">
-          CATEGORIES <img src="images/sort-down-grey.svg" alt="" class="hamburger__down_icon" id="down4" />
+          CATEGORIES <img src="images/sort-down-grey.svg" alt="" class="down_icon" id="down4" />
         </li>
         <div id="footer__list2">
           <a href="#" class="footer__list__item">Accessories</a>
@@ -332,13 +471,12 @@
           <a href="#" class="footer__list__item">Food</a>
         </div>
         <li class="footer__list__title" id="footer__list__title3">
-          ABOUT <img src="images/sort-down-grey.svg" alt="" class="hamburger__down_icon" id="down5" />
+          ABOUT <img src="images/sort-down-grey.svg" alt="" class="down_icon" id="down5" />
         </li>
         <div id="footer__list3">
-          <a href="#" class="footer__list__item">Contacts</a>
-          <a href="#" class="footer__list__item">Jobs</a>
-          <a href="#" class="footer__list__item">Team</a>
-          <a href="#" class="footer__list__item">Privacy Policy</a>
+          <a href="#" class="footer__list__item">Company</a>
+          <a href="#" class="footer__list__item">Library</a>
+          <a href="#" class="footer__list__item">Contact Us</a>
         </div>
       </ul>
 
