@@ -5,7 +5,7 @@
 // shades
 $green: #85bc23;
 $blue: #3b5b96;
-$darker: #262a33;
+$darker: #262a33; // for product desciption, header on hover,
 $light: #e8e2d6;
 $dark: #2d343a;
 $grey: #999999;
@@ -16,6 +16,7 @@ $heart: #e73c67;
 $lightblue: #4bc1d6;
 $red: #d9072d;
 $orange: #e86019;
+$header_arrows: #d0d5d0;
 
 // use
 $primary: $green;
@@ -43,7 +44,6 @@ $card_price--fulscreen: $teal;
 
 $menu: $dark;
 
-$description: $darker;
 $popular_items_bg: $darker;
 
 //MIXINS
@@ -79,6 +79,17 @@ $popular_items_bg: $darker;
   text-transform: uppercase;
   color: white;
 }
+
+@mixin links($text-decoration: none, $color) {
+  text-decoration: $text-decoration;
+  color: $color;
+}
+@mixin arrow_icon($margin: 10px 5% 0 0, $width: 10px, $float: right, $transform: none) {
+  margin: $margin;
+  width: $width;
+  float: $float;
+  transform: $transform;
+}
 // FUNCTIONS
 
 // STYLES
@@ -108,6 +119,14 @@ $popular_items_bg: $darker;
 
 .flex-text:nth-child(even) {
   margin: 0 20px 0 80px;
+}
+
+//Bootstrap resets
+
+@media (max-width: 1900px) {
+  h3 {
+    font-size: inherit !important;
+  }
 }
 
 // Animations
@@ -210,6 +229,92 @@ $popular_items_bg: $darker;
     background-color: rgba(0, 0, 0, 0);
     padding: 10px 40px;
   }
+}
+
+.header--fullscreen {
+  & a,
+  &__list__title {
+    @include links($color: black);
+    padding: 10px 15px;
+    &:hover {
+      color: $primary;
+    }
+  }
+  &__list__title {
+    text-transform: uppercase;
+  }
+  &__list {
+    display: flex;
+    // padding-top: 20px;
+  }
+
+  &__dropdown {
+    // @include hide;
+    background-color: $dark;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+
+    &__list__item {
+      @include links($color: white);
+      padding: 0 20px 0 0;
+      // @include hide;
+      margin-bottom: 10px;
+      &:hover {
+        color: $primary;
+      }
+    }
+    &__image {
+      max-width: 25%;
+      border-radius: 5px;
+      height: auto;
+    }
+
+    &_flex {
+      display: flex;
+    }
+
+    &__titles {
+      display: flex;
+      justify-content: space-between;
+      color: white;
+      font-size: 1.25rem;
+      text-transform: uppercase;
+      width: 60%;
+      margin-bottom: 20px;
+    }
+    &__containers {
+      display: flex;
+      justify-content: space-between;
+    }
+    &__container {
+      @include flex-col;
+    }
+  }
+}
+.logo--fullscreen {
+  margin-right: auto;
+}
+.dropdown__title1 {
+  margin-right: auto;
+}
+
+.dropdown__title2 {
+  margin-left: auto;
+}
+.services:hover {
+  background-color: $dark;
+  color: white;
+  border-bottom: $primary solid 3px;
+  cursor: pointer;
+}
+
+.services:hover ~ .header--fullscreen__dropdown {
+  display: block !important;
+}
+.languages a,
+.currency a {
+  color: $secondary;
 }
 
 .prev:hover,
@@ -330,9 +435,6 @@ header > li:first-child {
   text-transform: uppercase;
 }
 .header {
-  &__logo {
-    margin-right: auto;
-  }
   &__icons {
     color: $secondary;
   }
@@ -372,10 +474,7 @@ header > li:first-child {
       }
     }
     &__item {
-      text-decoration: none;
-      display: flex;
-      flex-direction: column;
-      color: white;
+      @include links($color: white);
     }
   }
   &__pic {
@@ -384,20 +483,24 @@ header > li:first-child {
     // border: solid;
     border-radius: 5%;
   }
-  &__down_icon {
-    display: inline;
-    width: 10px;
-    float: right;
-    margin: 10px 5% 0 0;
-  }
-  &__up_icon {
-    width: 10px;
-    float: right;
-    margin: 10px 5% 0 0;
-    transform: rotate(180deg);
-  }
+}
+.down_icon {
+  @include arrow_icon($margin: 10px 5% 0 0);
 }
 
+.services .down_icon,
+.currency .down_icon,
+.languages .down_icon {
+  @include arrow_icon($margin: 10px 0 0 14px);
+  display: inline;
+  fill: $header_arrows;
+  position: relative;
+  top: 5px;
+}
+
+.up_icon {
+  @include arrow_icon($margin: 10px 5% 0 0, $transform: rotate(180deg));
+}
 @media screen and (min-width: 1200px) {
   .ads {
     display: flex;
