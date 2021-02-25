@@ -3,6 +3,8 @@
 AOS.init();
 
 //Slideshow
+let current_year = new Date().getFullYear();
+document.getElementById("year").innerHTML = current_year;
 
 let slideIndex = 1;
 showSlides(slideIndex);
@@ -43,7 +45,7 @@ function currentCard(n) {
 function showCards(n) {
   let i;
   let cards = document.querySelectorAll(".popular_items__card");
-  let dots = document.querySelectorAll(".slideshow__dot");
+  let dots = document.querySelectorAll(".popular_items__dot");
   if (n > cards.length) {
     cardIndex = 1;
   }
@@ -58,28 +60,59 @@ function showCards(n) {
   }
   cards[cardIndex - 1].style.display = "block";
   dots[cardIndex - 1].className += " active";
+  dots.forEach((item) => {
+    item.addEventListener("click", (event) => {
+      currentCard(cardIndex);
+    });
+  });
 }
-document.querySelectorAll(".popular_items__dot").forEach((item) => {
+
+document.querySelectorAll(".slideshow__dot").forEach((item) => {
   item.addEventListener("click", (event) => {
-    currentCard(cardIndex);
+    currentSlide(slideIndex);
   });
 });
-// let slideIndex = 0;
-// showSlides();
 
-// function showSlides() {
-//   let i;
-//   let slides = document.getElementsByClassName("mySlides");
-//   for (i = 0; i < slides.length; i++) {
-//     slides[i].style.display = "none";
-//   }
-//   slideIndex++;
-//   if (slideIndex > slides.length) {
-//     slideIndex = 1;
-//   }
-//   slides[slideIndex - 1].style.display = "block";
-//   setTimeout(showSlides, 4000); // Change image every 4 seconds
-// }
+//Featured Items
+
+let itemIndex = 0;
+showItems();
+let val = document.querySelector("progress").value;
+if ((itemIndex = 1)) {
+  val = 25;
+} else if ((itemIndex = 2)) {
+  val = 50;
+} else if ((itemIndex = 3)) {
+  val = 75;
+} else {
+  val = 100;
+}
+
+function showItems() {
+  let i;
+  let items = document.getElementsByClassName("featured__cards");
+  let arrows = document.getElementsByClassName("arrow");
+  for (i = 0; i < items.length; i++) {
+    items[i].style.display = "none";
+  }
+  itemIndex++;
+  if (itemIndex > items.length) {
+    itemIndex = 1;
+  }
+  items[itemIndex - 1].style.display = "flex";
+  setTimeout(showItems, 4000);
+  // document.querySelectorAll(".arrow").forEach((arrow) => {
+  //   arrow.addEventListener("click", (event) => {
+  //     currentItem(itemIndex);
+  //   });
+  // });
+}
+
+document.querySelectorAll(".slideshow__dot").forEach((item) => {
+  item.addEventListener("click", (event) => {
+    currentSlide(slideIndex);
+  });
+});
 
 // Onclicks
 $(".hamburger__logo").on("click", function () {
@@ -87,31 +120,45 @@ $(".hamburger__logo").on("click", function () {
 });
 
 $("#hamburger__list__title1").on("click", function () {
-  $("#down1").toggleClass("hamburger__up_icon");
-  $("#down1").toggleClass("hamburger__down_icon");
+  $("#down1").toggleClass("up_icon");
+  $("#down1").toggleClass("down_icon");
   $("#hamburger__list1 a").toggleClass("open");
 });
 
 $("#hamburger__list__title2").on("click", function () {
-  $("#down2").toggleClass("hamburger__up_icon");
-  $("#down2").toggleClass("hamburger__down_icon");
+  $("#down2").toggleClass("up_icon");
+  $("#down2").toggleClass("down_icon");
   $("#hamburger__list2 a").toggleClass("open");
 });
 
 $("#footer__list__title1").on("click", function () {
-  $("#down3").toggleClass("hamburger__up_icon");
-  $("#down3").toggleClass("hamburger__down_icon");
+  $("#down3").toggleClass("up_icon");
+  $("#down3").toggleClass("down_icon");
   $("#footer__list1 p").toggleClass("open");
 });
 
 $("#footer__list__title2").on("click", function () {
-  $("#down4").toggleClass("hamburger__up_icon");
-  $("#down4").toggleClass("hamburger__down_icon");
+  $("#down4").toggleClass("up_icon");
+  $("#down4").toggleClass("down_icon");
   $("#footer__list2 a").toggleClass("open");
 });
 
 $("#footer__list__title3").on("click", function () {
-  $("#down5").toggleClass("hamburger__up_icon");
-  $("#down5").toggleClass("hamburger__down_icon");
+  $("#down5").toggleClass("up_icon");
+  $("#down5").toggleClass("down_icon");
   $("#footer__list3 a").toggleClass("open");
+});
+
+$(".services").on("mouseover", function () {
+  $(".header--fullscreen__dropdown").addClass("open");
+});
+$(".services").on("mouseout", function () {
+  $(".header--fullscreen__dropdown").removeClass("open");
+});
+
+$(".header--fullscreen__dropdown").on("mouseover", function () {
+  $(".header--fullscreen__dropdown").addClass("open");
+});
+$(".header--fullscreen__dropdown").on("mouseout", function () {
+  $(".header--fullscreen__dropdown").removeClass("open");
 });
