@@ -11,6 +11,7 @@ $dark: #2d343a;
 $grey: #999999;
 $asphalt: #45413e;
 $teal: #5dc091;
+$lightgrey: #d2d6d9;
 
 $heart: #e73c67;
 $lightblue: #4bc1d6;
@@ -20,33 +21,23 @@ $header_arrows: #d0d5d0;
 
 // use
 $primary: $green;
-// $title: $green;
-// $button: $green;
-// $benefits_icon: $green;
 
 $secondary: $grey;
-// $lang: $grey;
-// $currency: $grey;
-// $product_price: $grey;
-// $p: $grey;
 
 $facebook: $blue;
 
 $bg: $light;
-$borders: $light;
+
+$borders: $lightgrey;
 
 $benefits_bg: $asphalt;
 $benefits: $asphalt;
-
-$hover: $teal;
-$card_price--fulscreen: $teal;
 
 $menu: $dark;
 
 //MIXINS
 
 //Helpers
-//display:none, block
 @mixin show {
   display: block;
 }
@@ -59,18 +50,23 @@ $menu: $dark;
   display: flex;
   flex-direction: column;
 }
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}
 @mixin flex-center {
   display: flex;
   justify-content: center;
 }
-//Typography
 
-@mixin h1_white {
-  font-size: 2em;
-  font-weight: 700;
-  color: white;
-  line-height: 1.3;
+//Typography
+@mixin h1_white($font-size: 2rem, $font-weight: 700, $color: white, $line-height: 1.3) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  color: $color;
+  line-height: $line-height;
 }
+
 @mixin h2_white {
   font-size: 1.5em;
   font-weight: 700;
@@ -94,7 +90,25 @@ $menu: $dark;
   float: $float;
   transform: $transform;
 }
-// FUNCTIONS
+
+@mixin buttons {
+  border-radius: 50%;
+  border: none;
+  background: white;
+  padding: 18px 20px;
+  margin-left: 10px;
+}
+
+@mixin gradient($background: linear-gradient(#42d6a9, #33c778)) {
+  content: "";
+  background: $background;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+}
 
 // STYLES
 
@@ -102,14 +116,16 @@ $menu: $dark;
 .open {
   display: block !important;
 }
-.hide,
-.ads {
+.hide {
   @include hide;
 }
 .show {
   display: inline;
 }
-
+.flex-col {
+  @include flex-col;
+  box-shadow: black;
+}
 .flex-row {
   flex-direction: row;
   display: flex;
@@ -125,51 +141,38 @@ $menu: $dark;
   margin: 0 20px 0 80px;
 }
 
-//Bootstrap resets
-
-@media (max-width: 1900px) {
-  h3 {
-    font-size: inherit !important;
-  }
-}
-
-// Animations
-/* Fading animation */
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-  from {
-    opacity: 0.4;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fade {
-  from {
-    opacity: 0.4;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 //Main
+body {
+  font-family: "Lato", sans-serif !important;
+}
+
+hr {
+  width: 50vw;
+  height: 3px !important;
+  border-radius: 1px;
+}
+button:focus {
+  outline: none !important;
+}
+ul {
+  list-style-type: none;
+}
+
+.hide_filters {
+  border: none;
+  background: none;
+  color: $primary;
+  margin: 0 0 20px 0;
+}
+
 .slideshow {
   &__container {
-    max-width: 70vw;
+    max-width: 90vw;
     position: relative;
-    margin-right: auto;
+    margin: auto;
   }
   &__slides {
     @include hide;
-
     & img {
       width: 90%;
       margin-left: auto;
@@ -179,30 +182,26 @@ $menu: $dark;
     }
   }
   &__heading {
+    @include h1_white($font-size: 1.5rem);
     position: absolute;
-    top: 10%;
+    top: 8%;
     margin-left: 10%;
-    margin-right: 40%;
-    @include h1_white;
+    margin-right: 20%;
   }
   &__caption {
-    // do a breakpoint for those
     color: white;
     position: absolute;
     top: 30%;
-    margin-left: 10%;
-    margin-right: 10%;
-    font-size: 1em;
+    margin: 20px 10% 0 10%;
+    font-size: 14px;
     hyphens: auto;
   }
   &__dots {
-    position: absolute;
+    // position: absolute;
     display: flex;
-    width: 70vw;
-    margin-top: -60px;
+    width: 40vw;
     justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
+    margin: -35px auto 0;
   }
   &__dot {
     cursor: pointer;
@@ -226,26 +225,31 @@ $menu: $dark;
     }
   }
   &__btn {
+    font-size: 12px;
     text-align: center;
     position: absolute;
-    margin: -130px auto 0 auto;
+    margin: -90px auto 0 auto;
     border: solid white;
     border-radius: 25px;
     background-color: rgba(0, 0, 0, 0);
-    padding: 10px 40px;
+    padding: 7px 30px;
     & a {
       @include links($color: white);
     }
   }
 }
 
+.header--mobile {
+  background-color: white;
+}
+
 .header--fullscreen {
+  @include hide;
   background: white;
-  z-index: 5;
+
   & :first-child {
     margin-bottom: 0;
   }
-  // & a,
   &__list__title {
     @include links($color: black);
     text-transform: uppercase;
@@ -256,10 +260,10 @@ $menu: $dark;
   }
   &__list {
     display: flex;
-    // padding-top: 20px;
   }
   &__icons i {
     color: $grey;
+    position: relative;
     &:hover {
       color: $primary;
     }
@@ -272,7 +276,6 @@ $menu: $dark;
     &__list__item {
       @include links($color: white);
       padding: 0 20px 0 0;
-      // @include hide;
       margin-bottom: 10px;
       &:hover {
         color: $primary;
@@ -320,11 +323,17 @@ $menu: $dark;
 
   & h1 {
     color: #011947;
+    font-weight: 800;
+    letter-spacing: 3px;
+    font-size: 2.4rem;
+    margin: 0;
   }
   &__text {
     @include flex-col;
     line-height: 0.1rem;
     text-align: center;
+    justify-content: center;
+    align-items: flex-end;
     & a {
       @include links($color: $primary);
       &:hover {
@@ -347,7 +356,7 @@ $menu: $dark;
 }
 
 .services p {
-  margin: 0 !important;
+  margin: 0;
   padding: 0 0 15px 0;
 }
 .services:hover {
@@ -363,9 +372,9 @@ $menu: $dark;
 }
 
 .languages {
+  @include links($color: $secondary);
   position: relative;
   display: inline-block;
-  @include links($color: $secondary);
   padding: 15px;
   &:hover {
     color: $primary;
@@ -435,34 +444,55 @@ $menu: $dark;
   margin-top: 30px;
   background-color: $dark;
   padding-bottom: 50px;
+  &__container {
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
   &__heading {
     line-height: 0.5;
     text-align: center;
     padding-top: 20px;
     color: white;
-    & span {
-      display: inline-block;
-      position: relative;
-      font-weight: 600;
-    }
   }
   &__card {
     width: 18rem;
-    margin-left: auto;
-    margin-right: auto;
-    border: none !important;
+    margin: 20px 10px;
+    border: none;
     text-align: center;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     & img {
-      height: 288px !important;
+      height: 288px;
       flex-shrink: 0;
       object-fit: cover;
     }
     &__price {
       color: $primary;
-      font-weight: 500;
+      font-weight: 600;
+    }
+    &__btns {
+      display: none;
+      width: 240px;
+      margin: 0 auto;
+      border-radius: 25px;
+      border: solid $secondary 2px;
+      font-weight: 600;
+    }
+    &__btn1 {
+      color: $teal;
+      border: none;
+      background: none;
+      border-right: solid $secondary 2px;
+      padding: 10px;
+      font-weight: 600;
+    }
+    &__btn2 {
+      border: none;
+      background: none;
+      font-weight: 600;
     }
     &__btn {
       @include hide;
@@ -491,7 +521,7 @@ $menu: $dark;
     position: absolute;
     display: flex;
     width: 100vw;
-    margin-top: 510px;
+    margin-top: 540px;
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
@@ -509,8 +539,13 @@ $menu: $dark;
     padding: 5px;
   }
 }
-
-.popular_items__heading span .popular_items__heading span:after {
+.heading__span {
+  display: inline-flex;
+  position: relative;
+  font-weight: 700;
+}
+.heading__span::after,
+.heading__span::before {
   content: "";
   position: absolute;
   height: 5px;
@@ -518,36 +553,18 @@ $menu: $dark;
   top: 0;
   width: 35vw;
 }
-.popular_items__heading span:before {
+.heading__span::before {
   right: 100%;
   margin-right: 15px;
 }
-.popular_items__heading span:after {
+.heading__span::after {
   left: 100%;
   margin-left: 15px;
 }
 
-@media screen and (min-width: 700px) {
-  .popular_items__card__btn {
-    display: flex;
-  }
-  .popular_items__dots {
-    display: none;
-  }
-  .header--fullscreen {
-    display: flex;
-  }
-  .popular_items__heading {
-    font-size: larger;
-  }
-}
-
-// .header--fullscreen {
-//   @include hide;
-// }
-
 header {
   display: flex;
+  z-index: 5;
   border-bottom: 1px solid rgb(170, 170, 170);
   position: sticky;
   position: -webkit-sticky;
@@ -603,7 +620,6 @@ header > li:first-child {
   &__pic {
     width: 80%;
     margin: 5%;
-    // border: solid;
     border-radius: 5%;
   }
 }
@@ -624,47 +640,14 @@ header > li:first-child {
 .up_icon {
   @include arrow_icon($margin: 10px 5% 0 0, $transform: rotate(180deg));
 }
-@media screen and (min-width: 1200px) {
-  .ads {
-    display: flex;
-  }
-}
 
-ul {
-  list-style-type: none;
-}
-
-@media screen and (min-width: 768px) {
-}
-@media screen and (min-width: 1200px) {
-  .header--mobile {
-    @include hide;
-  }
-}
-
-.featured {
-  @include hide;
-  @include flex-col;
-  text-align: center;
-  background: $dark;
-  color: white;
-  & h2 {
-    font-size: 2rem;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .featured {
-    display: flex;
-  }
-}
 .slideshow_ads__container {
   display: flex;
   margin-top: 30px;
 }
 .ads {
+  @include hide;
   max-width: 20vw;
-  @include flex-col;
   margin-right: auto;
   text-align: center;
   &__banner {
@@ -720,13 +703,6 @@ ul {
     margin: 10px 10%;
   }
 }
-@media screen and (min-width: 612px) {
-  .banner {
-    background-image: url("/Develops/PROJECT/images/banner_large.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-}
 
 .benefits {
   &__container {
@@ -749,16 +725,16 @@ ul {
 
 footer {
   padding: 20px 30px;
+  list-style: none;
   & ul {
     padding-left: 0;
-    // @include hide;
   }
   & li {
     cursor: pointer;
   }
 }
 
-.footer {
+.mobile--footer {
   &__list__title {
     text-transform: uppercase;
     font-weight: 600;
@@ -779,6 +755,7 @@ footer {
 .mobile__icons {
   @include flex-center;
   background-color: $menu;
+  position: relative;
 }
 
 .mobile__icon {
@@ -790,32 +767,37 @@ footer {
   }
 }
 .featured {
-  @include flex-col;
+  @include hide;
   padding-top: 30px;
   background-color: $dark;
-
+  text-align: center;
+  background: #2d343a;
+  color: white;
+  & h2 {
+    font-size: 2rem;
+  }
   &__cards {
+    @include hide;
     flex-direction: row;
-    display: flex;
+    flex-wrap: wrap;
   }
   &__card {
     color: black;
     width: 18rem;
     margin: 0 auto 30px auto;
-    border: none !important;
+    border: none;
     text-align: center;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-
     & img {
-      height: 288px !important;
+      height: 288px;
       flex-shrink: 0;
       object-fit: cover;
     }
     &__title {
       color: $primary;
-      font-weight: 500;
+      font-weight: 700;
     }
     &__btn {
       @include hide;
@@ -847,14 +829,671 @@ footer {
   margin: auto;
   padding-bottom: 30px;
   cursor: pointer;
-  // &__left{
-
-  // }
-  // &__right{
-
-  // }
   & progress {
     margin: 7px 20px 0 20px;
     width: 200px;
+  }
+}
+
+.fullscreen--footer {
+  @include hide;
+  justify-content: space-around;
+  &__list__item {
+    @include links($color: $secondary);
+    &:hover {
+      color: $primary;
+    }
+    &:first-child {
+      margin-top: 30px;
+    }
+  }
+  &__links {
+    @include flex-col;
+  }
+  &__social {
+    margin: 15px;
+    &__container {
+      @include flex-center;
+    }
+  }
+}
+
+.add_and_fav {
+  @include hide;
+  margin: auto;
+  position: absolute;
+  top: 120px;
+  left: 50px;
+  z-index: 4;
+}
+.add {
+  @include buttons;
+  & i {
+    color: $teal;
+    font-size: 24px;
+  }
+  &:hover {
+    background-color: darken($color: $light, $amount: 1);
+  }
+}
+.fav {
+  @include buttons;
+  & i {
+    color: $heart;
+    font-size: 24px;
+  }
+  &:hover {
+    background-color: darken($color: $light, $amount: 1);
+  }
+}
+
+#card2 {
+  position: relative;
+}
+#card2:hover {
+  &::after {
+    @include gradient;
+  }
+}
+#card2:hover .add_and_fav {
+  display: flex;
+}
+
+#card3 {
+  position: relative;
+  &::after {
+    @include gradient($background: linear-gradient(#e0729e, #6a4194));
+  }
+}
+
+.review {
+  color: white;
+  position: absolute;
+  text-align: left;
+  width: 80%;
+  z-index: 4;
+  top: 380px;
+  left: 20px;
+  &:first-child {
+    top: 270px;
+  }
+  & i {
+    color: $primary;
+    padding: 0 20px 0 0;
+  }
+}
+
+.numbers {
+  @include links($color: $primary);
+  text-align: center;
+  position: absolute;
+  top: 23px;
+  border-radius: 50%;
+  border: 1px $primary solid;
+  background: none;
+  width: 18px;
+  height: 18px;
+  font-size: 10px;
+  margin: 0 0 0 -29px;
+}
+
+// 404 Page
+
+.error {
+  background: $bg;
+  &__container {
+    @include flex-col;
+    width: 90%;
+    justify-content: center;
+    margin: auto;
+  }
+  &__section {
+    background: white;
+    width: 90%;
+    margin: 0 auto 50px auto;
+    border-radius: 5px;
+    padding: 20px 40px 40px 40px;
+    justify-self: center;
+    & h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+  }
+  &__picture {
+    @include hide;
+    background: no-repeat url(../images/warning.svg) center left/60%;
+    width: 70vw;
+  }
+  &__heading {
+    margin: auto auto 40px auto;
+    text-align: center;
+  }
+  &__redirect {
+    @include links($color: $primary);
+
+    &:hover {
+      color: $secondary;
+    }
+  }
+  &__search {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 15px 0;
+  }
+}
+
+.breadcrumbs {
+  margin: 40px auto 0 auto;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  & a {
+    @include links($color: $primary);
+    margin: 0 7px;
+    &:hover {
+      color: $secondary;
+    }
+  }
+}
+.search_input {
+  border: solid $bg 1.5px;
+  border-radius: 25px;
+  padding: 5px 15px;
+  width: 90%;
+  position: relative;
+  & ~ i::before {
+    position: absolute;
+    right: 20%;
+    margin: -13px 0 0 0;
+  }
+}
+.oops--fullscreen {
+  color: $primary;
+  font-size: 72px;
+  font-weight: 700;
+  margin: 100px;
+  text-align: center;
+}
+.oops--mobile {
+  color: $primary;
+  font-size: 56px;
+  font-weight: 600;
+  margin: 0 auto;
+  text-align: center;
+}
+@media screen and (min-width: 950px) {
+  .search_input ~ i::before {
+    right: 18%;
+  }
+  .error__picture {
+    display: flex;
+  }
+  .oops--mobile {
+    @include hide;
+  }
+  .error__section {
+    @include flex-row;
+    padding: 40px;
+  }
+  .error__section h2 {
+    font-size: 1.5rem;
+  }
+}
+
+// Category
+.sort {
+  @include flex-col;
+  width: 100%;
+  background: white;
+  border-radius: 5px;
+  padding: 15px 15px 0 15px;
+  &__container {
+    @include flex-col;
+    & > div {
+      margin-bottom: 25px;
+      & > label {
+        padding: 0 15px 0 0;
+      }
+    }
+  }
+  &__dropdown {
+    background: white;
+    border: solid $secondary 2px;
+    border-radius: 25px;
+    width: 80%;
+    text-align: left;
+    padding-left: 25px;
+    &:focus {
+      box-shadow: 0 0 0 0.25rem rgb(133 188 35 / 50%);
+    }
+    &__item:active {
+      color: white;
+      background: $primary;
+    }
+  }
+  &__color {
+    &_1,
+    &_2,
+    &_3,
+    &_4,
+    &_5,
+    &_6,
+    &_7,
+    &_8 {
+      border: none;
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      border-radius: 50%;
+      padding: 5px;
+      &:active,
+      &:focus {
+        border: solid black 2px;
+      }
+    }
+    &_1 {
+      background: $light;
+    }
+    &_2 {
+      background: $lightblue;
+    }
+    &_3 {
+      background: $darker;
+    }
+    &_4 {
+      background: $primary;
+    }
+    &_5 {
+      background: $blue;
+    }
+    &_6 {
+      background: $orange;
+    }
+    &_7 {
+      background: $red;
+    }
+    &_8 {
+      background: $bg;
+    }
+  }
+}
+.category {
+  background: $bg;
+  display: flex;
+  &__container {
+    @include flex-col;
+    width: 90%;
+    justify-content: center;
+    margin: auto;
+  }
+  &__heading {
+    text-align: center;
+    font-weight: 800;
+    justify-content: center;
+    justify-self: center;
+    justify-items: center;
+    align-self: center;
+    position: relative;
+    font-size: 32px;
+    padding: 0 0 30px 0;
+    &::before {
+      content: "";
+      position: absolute;
+      height: 5px;
+      border-bottom: 2px solid white;
+      top: 25px;
+      width: 35vw;
+      right: 100%;
+      margin-right: 30px;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      height: 5px;
+      border-bottom: 2px solid white;
+      top: 25px;
+      width: 35vw;
+      left: 100%;
+      margin-left: 30px;
+    }
+  }
+  &__featured__card {
+    color: black;
+    width: 16rem;
+    margin: 0 auto 30px auto;
+    border: none;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    & img {
+      height: 288px;
+      flex-shrink: 0;
+      object-fit: cover;
+    }
+    &__title {
+      color: $primary;
+      font-weight: 500;
+    }
+    &__btn {
+      @include hide;
+      text-align: center;
+      border-radius: 30px;
+      border: solid white;
+      width: 250px;
+      padding: 10px 0 10px 65px;
+      margin: 40px auto;
+      background: none;
+      color: white;
+      &:hover {
+        background: white;
+        color: $dark;
+      }
+      & i {
+        color: white;
+        margin: 5px 15px;
+      }
+      &:hover i {
+        color: $dark;
+      }
+    }
+  }
+
+  &__load_btn {
+    background-color: $primary;
+    color: white;
+    width: 25vw;
+    border: none;
+    border-radius: 35px;
+    padding: 15px;
+    margin: 30px auto 40px auto;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    &:hover {
+      background-color: white;
+      color: $primary;
+    }
+    &__container {
+      display: flex;
+      margin: auto;
+    }
+  }
+  &__cards {
+    &__container {
+      @include flex-row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    &__card {
+      color: darken($color: $facebook, $amount: 3);
+      width: 16rem;
+      margin: 20px 10px;
+      border: none;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      & img {
+        height: 288px;
+        flex-shrink: 0;
+        object-fit: cover;
+      }
+      &:hover {
+        cursor: pointer;
+      }
+      &__price {
+        color: $lightgrey;
+        font-weight: 600;
+      }
+
+      &__btn {
+        @include hide;
+        text-align: center;
+        border-radius: 30px;
+        border: solid white;
+        width: 250px;
+        padding: 10px 0 10px 65px;
+        margin: 40px auto;
+        background: none;
+        color: white;
+        &:hover {
+          background: white;
+          color: $dark;
+        }
+        & i {
+          color: white;
+          margin: 5px 15px;
+        }
+        &:hover i {
+          color: $dark;
+        }
+      }
+    }
+  }
+}
+
+.category__cards__card:hover::after {
+  @include gradient;
+}
+.category__cards__card:hover .add_and_fav {
+  display: block;
+}
+//Media
+@media screen and (min-width: 700px) {
+  .fullscreen--footer {
+    display: flex;
+  }
+  .mobile--footer {
+    display: none;
+  }
+  .mobile__icons {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .popular_items__card__btn {
+    display: flex;
+  }
+  .popular_items__dots {
+    display: none;
+  }
+
+  .popular_items__heading {
+    font-size: larger;
+  }
+
+  .popular_items__card__price {
+    color: $facebook;
+  }
+  .popular_items__card {
+    display: flex !important;
+  }
+  .featured {
+    @include flex-col;
+  }
+  .numbers {
+    background: white;
+    top: 12px;
+    margin: 0 0 -0 -8px;
+  }
+  .sort {
+    @include flex-row;
+    justify-content: space-between;
+    padding: 40px;
+  }
+  .sort__container {
+    width: calc(100% / 3);
+  }
+  .category__load_btn {
+    margin: 80px auto 70px auto;
+  }
+  .hide_filters {
+    @include hide;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .ads {
+    @include flex-col;
+  }
+  .header--fullscreen {
+    display: flex;
+  }
+  .header--mobile {
+    @include hide;
+  }
+  .slideshow__container {
+    max-width: 70vw;
+    margin-right: auto;
+  }
+  .slideshow__heading {
+    @include h1_white($font-size: 2rem);
+    margin-right: 40%;
+  }
+  .slideshow__btn {
+    margin: -130px auto 0 auto;
+    padding: 10px 30px;
+    font-size: inherit;
+  }
+  .slideshow__dots {
+    width: 70vw;
+    margin: auto;
+  }
+  .slideshow__caption {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 1900px) {
+  h3 {
+    font-size: inherit;
+  }
+}
+
+@media screen and (min-width: 612px) {
+  .banner {
+    background-image: url("/Develops/PROJECT/images/banner_large.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+//Sign in/out
+.sign_form {
+  background: white;
+  position: fixed;
+  width: 40%;
+  top: 20%;
+  left: 30vw;
+  z-index: 6;
+  border-radius: 5px;
+  padding: 40px;
+  &__heading {
+    margin: auto;
+    font-weight: 700;
+  }
+  &__inputs {
+    @include flex-col;
+    align-items: flex-start;
+    font-weight: bold;
+    margin: 0 0 25px 0;
+  }
+  &__email,
+  &__pass {
+    border-radius: 20px;
+    border: solid $borders 2px;
+    margin: 10px 0 0 -3px;
+    padding: 5px;
+    width: 100%;
+  }
+  &__password {
+    @include links($color: $primary);
+    position: absolute;
+    top: 172px;
+    right: 40px;
+    font-weight: 400;
+    font-size: 14px;
+    &:hover {
+      color: $secondary;
+    }
+  }
+  &__icon {
+    font-size: 16px;
+    color: $grey;
+    position: absolute;
+    right: 60px;
+    bottom: 165px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  &__buttons {
+    @include flex-col;
+    margin: auto;
+  }
+  &__btn {
+    background: $primary;
+    color: white;
+    border-radius: 25px;
+    padding: 10px;
+    border: none;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    margin: 0 0 20px 0;
+    &:hover {
+      background-color: white;
+      color: $primary;
+    }
+  }
+  &__acc {
+    @include links($color: $primary);
+    font-weight: 400;
+    &:hover {
+      color: $secondary;
+    }
+  }
+}
+
+.cookies {
+  background: white;
+  position: fixed;
+  width: 90%;
+  top: 70%;
+  left: 5vw;
+  z-index: 6;
+  border-radius: 5px;
+  padding: 10px;
+  &__heading {
+    color: $primary;
+  }
+  &__text {
+    color: black;
+    position: relative;
+  }
+  &__link {
+    @include links($color: $primary);
+  }
+  &__icon {
+    position: absolute;
+    bottom: 100px;
+    right: 20px;
+    &:hover {
+      color: $secondary;
+      cursor: pointer;
+    }
+  }
+  &__btn {
+    width: 100px;
+    position: absolute;
+    right: 30px;
+    bottom: 20px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    background-color: $primary;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    &:hover {
+      color: $primary;
+      background-color: white;
+    }
   }
 }
