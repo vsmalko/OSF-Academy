@@ -13,13 +13,14 @@
       integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
       crossorigin="anonymous"
     />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
   </head>
   <body>
     <!-- fullscreen header starts-->
     <header class="header--fullscreen">
       <div class="logo--fullscreen">
-        <a href="index.html"><img src="images/logo.png" alt="" class="logo" /></a>
+        <a href="index.html"><img src="images/logo.png" alt="OSF Academy logo" class="logo" /></a>
         <div class="logo--fullscreen__text">
           <a href="index.html">
             <h1>OSF</h1>
@@ -50,7 +51,6 @@
          C-23.6,76.2,7.8,0,70.8,0z"
             />
           </svg>
-          <!-- <img src="images/sort-down-light.svg" alt="" class="down_icon" id="down6" /> -->
         </p>
 
         <a href="#" class="header--fullscreen__list__title">Company</a>
@@ -77,7 +77,6 @@
          C-23.6,76.2,7.8,0,70.8,0z"
             />
           </svg>
-          <!-- <img src="images/sort-down-light.svg" alt="" class="down_icon" id="down7" -->
         </a>
         <div class="languages__dropdown">
           <a href="#" class="languages__item">UA</a>
@@ -106,7 +105,6 @@
          C-23.6,76.2,7.8,0,70.8,0z"
             />
           </svg>
-          <!-- <img src="images/sort-down-light.svg" alt="" class="down_icon" id="down8" -->
         </a>
         <div class="currency__dropdown">
           <a href="#" class="currency__item">&euro; EUR</a>
@@ -117,9 +115,9 @@
 
       <ul class="header--fullscreen__icons">
         <a href="#"><i class="fas fa-search"></i></a>
-        <a href="#"><i class="far fa-user"></i></a>
-        <a href="#"><i class="far fa-heart"></i></a>
-        <a href="#"><i class="fas fa-shopping-bag"></i></a>
+        <a href="#"><i class="far fa-user sign"></i></a>
+        <a href="#"><i class="far fa-heart"></i><span class="numbers favorites"></span></a>
+        <a href="#"><i class="fas fa-shopping-bag"></i><span class="numbers cart"></span></a>
       </ul>
     </header>
     <!-- fullscreen header ends-->
@@ -172,10 +170,8 @@
           <a href="404 page.html" class="header--fullscreen__dropdown__list__item">Flowers & Plants</a>
           <a href="404 page.html" class="header--fullscreen__dropdown__list__item">Food</a>
         </div>
-        <img src="images/5.jpg" alt="" class="header--fullscreen__dropdown__image" />
+        <img src="images/5.jpg" alt="Dropdown image" class="header--fullscreen__dropdown__image" />
       </div>
-
-      <!-- </div> -->
     </div>
     <!-- fullscreen header dropdown ends -->
 
@@ -209,7 +205,7 @@
         </g>
       </svg>
 
-      <img src="images/logo.png" alt="" class="logo--mobile" />
+      <img src="images/logo.png" alt="OSF Academy logo" class="logo--mobile" />
     </header>
     <!-- mobile header ends-->
 
@@ -217,7 +213,7 @@
     <div class="hamburger__list">
       <ul>
         <li id="hamburger__list__title1">
-          PRODUCT CATEGORIES <img src="images/sort-down-white.svg" alt="" class="down_icon" id="down1" />
+          PRODUCT CATEGORIES <img src="images/sort-down-white.svg" class="down_icon" id="down1" />
         </li>
         <div id="hamburger__list1">
           <a href="404 page.html" class="hamburger__list__item">Accessories</a>
@@ -233,7 +229,7 @@
 
       <ul>
         <li id="hamburger__list__title2">
-          SALE <img src="images/sort-down-white.svg" alt="" class="down_icon" id="down2" />
+          SALE <img src="images/sort-down-white.svg" class="down_icon" id="down2" />
         </li>
         <div id="hamburger__list2">
           <a href="404 page.html" class="hamburger__list__item">Accessories</a>
@@ -247,7 +243,7 @@
         </div>
       </ul>
 
-      <img src="images/1.jpg" alt="" class="hamburger__pic" />
+      <img src="images/1.jpg" class="hamburger__pic" />
     </div>
     <!-- hamburger ends -->
 
@@ -272,7 +268,7 @@
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
           </div>
           <div class="slideshow__btn__container">
-            <button type="button" class="slideshow__btn">VIEW MORE</button>
+           <button type="button" class="slideshow__btn"><a href="category.html">VIEW MORE</a></button>
           </div>
         </div>
 
@@ -283,7 +279,7 @@
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
           </div>
           <div class="slideshow__btn__container">
-            <button type="button" class="slideshow__btn">VIEW MORE</button>
+            <button type="button" class="slideshow__btn"><a href="category.html">VIEW MORE</a></button>
           </div>
         </div>
 
@@ -294,7 +290,7 @@
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
           </div>
           <div class="slideshow__btn__container">
-            <button type="button" class="slideshow__btn">VIEW MORE</button>
+            <button type="button" class="slideshow__btn"><a href="category.html">VIEW MORE</a></button>
           </div>
         </div>
 
@@ -305,7 +301,7 @@
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
           </div>
           <div class="slideshow__btn__container">
-            <button type="button" class="slideshow__btn">VIEW MORE</button>
+            <button type="button" class="slideshow__btn"><a href="category.html">VIEW MORE</a></button>
           </div>
         </div>
 
@@ -332,10 +328,11 @@
 
     <!-- popular items start -->
     <section class="popular_items">
-      <div class="popular__item">
-        <p class="popular_items__heading"><span>Popular Items</span></p>
+      <p class="popular_items__heading"><span class="heading__span">Popular Items</span></p>
+      <div class="popular_items__container">
+        
         <div class="popular_items__card card">
-          <img src="images/item1.jpg" class="card-img-top" alt="..." />
+          <img src="images/item1.jpg" class="card-img-top" alt="Card image" />
           <div class="card-body">
             <p class="card-text">
               Some quick example text to build on the card title and make up the bulk of the card's content.
@@ -343,21 +340,29 @@
             <p class="popular_items__card__price">$ 799.55</p>
           </div>
         </div>
-      </div>
+      
 
-      <div class="popular_items__card card">
-        <img src="images/item2.jpg" class="card-img-top" alt="..." />
+      <div class="popular_items__card card" id="card1">
+        <img src="images/item2.jpg" class="card-img-top" alt="Card image" />
         <div class="card-body">
           <p class="card-text">
             Some quick example text to build on the card title and make up the bulk of the card's content.
           </p>
-          <p class="popular_items__card__price">$ 850.55</p>
+          <p class="popular_items__card__price" id="price1">$ 850.55</p>
+          <div class="popular_items__card__btns" id="btns1">
+            <button type="button" class="popular_items__card__btn1">$ 799.55</button>
+            <button type="button" class="popular_items__card__btn2">BUY NOW</button>
+          </div>
         </div>
       </div>
 
-      <div class="popular_items__card card">
-        <img src="images/item3.jpg" class="card-img-top" alt="..." />
+      <div class="popular_items__card card" id="card2">
+        <img src="images/item3.jpg" class="card-img-top" alt="Card image" />
         <div class="card-body">
+          <div class="add_and_fav">
+          <button class="add"><i class="fas fa-plus"></i></button>
+          <button class="fav"><i class="fas fa-heart"></i></button>
+        </div>
           <p class="card-text">
             Some quick example text to build on the card title and make up the bulk of the card's content.
           </p>
@@ -365,18 +370,19 @@
         </div>
       </div>
 
-      <div class="popular_items__card card">
-        <img src="images/item4.jpg" class="card-img-top" alt="..." />
+      <div class="popular_items__card card" id="card3">
+        <img src="images/item4.jpg" class="card-img-top" alt="Card image" />
         <div class="card-body">
-          <p class="card-text">
+          <p class="review">
             Some quick example text to build on the card title and make up the bulk of the card's content.
           </p>
-          <p class="popular_items__card__price">$ 320.55</p>
+          <p class="review"><i class="fas fa-user-check"></i>5H AGO</p>
+          <!-- <p class="popular_items__card__price">$ 320.55</p> -->
         </div>
       </div>
 
       <div class="popular_items__card card">
-        <img src="images/item5.jpg" class="card-img-top" alt="..." />
+        <img src="images/item5.jpg" class="card-img-top" alt="Card image" />
         <div class="card-body">
           <p class="card-text">
             Some quick example text to build on the card title and make up the bulk of the card's content.
@@ -385,9 +391,40 @@
         </div>
       </div>
 
+      <div class="popular_items__card card">
+        <img src="images/item6.jpg" class="card-img-top" alt="Card image" />
+        <div class="card-body">
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the bulk of the card's content.
+          </p>
+          <p class="popular_items__card__price">$ 567.56</p>
+        </div>
+      </div>
+
+      <div class="popular_items__card card">
+        <img src="images/item7.jpg" class="card-img-top" alt="Card image" />
+        <div class="card-body">
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the bulk of the card's content.
+          </p>
+          <p class="popular_items__card__price">$ 277.525</p>
+        </div>
+      </div>
+
+      <div class="popular_items__card card">
+        <img src="images/item8.jpg" class="card-img-top" alt="Card image" />
+        <div class="card-body">
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the bulk of the card's content.
+          </p>
+          <p class="popular_items__card__price">$ 543.12</p>
+        </div>
+      </div>
+    </div>
+
       <button class="popular_items__card__btn">LOAD MORE <i class="fas fa-redo-alt"></i></button>
       <div class="popular_items__dots">
-        <span class="popular_items__dot"></span>
+        <span class="popular_items__dot" onclick="currentCard(1)"></span>
         <span class="popular_items__dot" onclick="currentCard(2)"></span>
         <span class="popular_items__dot" onclick="currentCard(3)"></span>
         <span class="popular_items__dot" onclick="currentCard(4)"></span>
@@ -410,13 +447,13 @@
 
       <div class="controls">
         <span class="carousel-control-prev-icon arrow controls__left" aria-hidden="true"></span>
-        <progress id="file" max="100">70%</progress>
+        <hr>
         <span class="carousel-control-next-icon arrow controls__right" aria-hidden="true"></span>
       </div>
 
       <div class="featured__cards">
         <div class="featured__card card">
-          <img src="images/item1.jpg" class="card-img-top" alt="..." />
+          <img src="images/item1.jpg" class="card-img-top" alt="Card image" />
           <div class="card-body">
             <p class="card-text">
               Some quick example text to build on the card title and make up the bulk of the card's content.
@@ -426,7 +463,7 @@
         </div>
 
         <div class="featured__card card">
-          <img src="images/item2.jpg" class="card-img-top" alt="..." />
+          <img src="images/item2.jpg" class="card-img-top" alt="Card image"/>
           <div class="card-body">
             <p class="card-text">
               Some quick example text to build on the card title and make up the bulk of the card's content.
@@ -436,7 +473,7 @@
         </div>
 
         <div class="featured__card card">
-          <img src="images/item3.jpg" class="card-img-top" alt="..." />
+          <img src="images/item3.jpg" class="card-img-top" alt="Card image" />
           <div class="card-body">
             <p class="card-text">
               Some quick example text to build on the card title and make up the bulk of the card's content.
@@ -446,49 +483,7 @@
         </div>
 
         <div class="featured__card card">
-          <img src="images/item4.jpg" class="card-img-top" alt="..." />
-          <div class="card-body">
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the bulk of the card's content.
-            </p>
-            <p class="featured__card__title">Marketing</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="featured__cards">
-        <div class="featured__card card">
-          <img src="images/item2.jpg" class="card-img-top" alt="..." />
-          <div class="card-body">
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the bulk of the card's content.
-            </p>
-            <p class="featured__card__title">Marketing</p>
-          </div>
-        </div>
-
-        <div class="featured__card card">
-          <img src="images/item3.jpg" class="card-img-top" alt="..." />
-          <div class="card-body">
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the bulk of the card's content.
-            </p>
-            <p class="featured__card__title">Marketing</p>
-          </div>
-        </div>
-
-        <div class="featured__card card">
-          <img src="images/item4.jpg" class="card-img-top" alt="..." />
-          <div class="card-body">
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the bulk of the card's content.
-            </p>
-            <p class="featured__card__title">Marketing</p>
-          </div>
-        </div>
-
-        <div class="featured__card card">
-          <img src="images/item1.jpg" class="card-img-top" alt="..." />
+          <img src="images/item4.jpg" class="card-img-top" alt="Card image" />
           <div class="card-body">
             <p class="card-text">
               Some quick example text to build on the card title and make up the bulk of the card's content.
@@ -500,7 +495,7 @@
 
       <div class="featured__cards">
         <div class="featured__card card">
-          <img src="images/item1.jpg" class="card-img-top" alt="..." />
+          <img src="images/item2.jpg" class="card-img-top" alt="Card image" />
           <div class="card-body">
             <p class="card-text">
               Some quick example text to build on the card title and make up the bulk of the card's content.
@@ -510,7 +505,7 @@
         </div>
 
         <div class="featured__card card">
-          <img src="images/item2.jpg" class="card-img-top" alt="..." />
+          <img src="images/item3.jpg" class="card-img-top" alt="Card image" />
           <div class="card-body">
             <p class="card-text">
               Some quick example text to build on the card title and make up the bulk of the card's content.
@@ -520,7 +515,7 @@
         </div>
 
         <div class="featured__card card">
-          <img src="images/item3.jpg" class="card-img-top" alt="..." />
+          <img src="images/item4.jpg" class="card-img-top" alt="Card image" />
           <div class="card-body">
             <p class="card-text">
               Some quick example text to build on the card title and make up the bulk of the card's content.
@@ -530,7 +525,49 @@
         </div>
 
         <div class="featured__card card">
-          <img src="images/item4.jpg" class="card-img-top" alt="..." />
+          <img src="images/item1.jpg" class="card-img-top" alt="Card image" />
+          <div class="card-body">
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the bulk of the card's content.
+            </p>
+            <p class="featured__card__title">Marketing</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="featured__cards">
+        <div class="featured__card card">
+          <img src="images/item5.jpg" class="card-img-top" alt="Card image"/>
+          <div class="card-body">
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the bulk of the card's content.
+            </p>
+            <p class="featured__card__title">Marketing</p>
+          </div>
+        </div>
+
+        <div class="featured__card card">
+          <img src="images/item6.jpg" class="card-img-top" alt="Card image" />
+          <div class="card-body">
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the bulk of the card's content.
+            </p>
+            <p class="featured__card__title">Marketing</p>
+          </div>
+        </div>
+
+        <div class="featured__card card">
+          <img src="images/item7.jpg" class="card-img-top" alt="Card image" />
+          <div class="card-body">
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the bulk of the card's content.
+            </p>
+            <p class="featured__card__title">Marketing</p>
+          </div>
+        </div>
+
+        <div class="featured__card card">
+          <img src="images/item8.jpg" class="card-img-top" alt="Card image" />
           <div class="card-body">
             <p class="card-text">
               Some quick example text to build on the card title and make up the bulk of the card's content.
@@ -545,7 +582,7 @@
     <!-- benefits content start -->
     <section class="benefits__container">
       <div class="flex-row">
-        <img src="images/cart.svg" alt="" class="benefits__icons" />
+        <img src="images/cart.svg" class="benefits__icons" />
         <div class="flex-text">
           <h3 class="benefits__headings">FOCUS</h3>
           <p>Our unwavering focus on superior service delivery and building next generation competencies</p>
@@ -557,11 +594,11 @@
           <h3 class="benefits__headings">METHOD</h3>
           <p>A standardized methodology designed to deliver business results and predictable costs</p>
         </div>
-        <img src="images/recycle.svg" alt="" class="benefits__icons" />
+        <img src="images/recycle.svg" class="benefits__icons" />
       </div>
 
       <div class="flex-row">
-        <img src="images/list.svg" alt="" class="benefits__icons" />
+        <img src="images/list.svg" class="benefits__icons" />
         <div class="flex-text">
           <h3 class="benefits__headings">KNOWLEDGE</h3>
           <p>
@@ -573,77 +610,190 @@
     </section>
     <!-- benefits content end -->
 
-    <!-- footer start -->
-    <footer>
+    <!-- mobile footer start -->
+    <footer class="mobile--footer">
       <p>
-        &copy; Copyright <span id="year"></span>.<br />
+        &copy; Copyright <span class="year"></span>.<br />
         All Rights Reserved.
       </p>
       <ul>
-        <li class="footer__list__title" id="footer__list__title1">
-          CONTACT <img src="images/sort-down-grey.svg" alt="" class="down_icon" id="down3" />
+        <li class="mobile--footer__list__title" id="mobile--footer__list__title1">
+          CONTACT <img src="images/sort-down-grey.svg" class="down_icon" id="down3" />
         </li>
-        <div id="footer__list1">
-          <p class="footer__list__item">
+        <div id="mobile--footer__list1">
+          <p class="mobile--footer__list__item">
             Headquarters: <br />
             5600, Blvd. des Galeries, Bur 530 <br />
             Quebec, Quebec G2K 2H6
           </p>
-          <p class="footer__list__item">contact@osf-global.com</p>
-          <p class="footer__list__item">+1 (888) 548-4344</p>
+          <p class="mobile--footer__list__item">contact@osf-global.com</p>
+          <p class="mobile--footer__list__item">+1 (888) 548-4344</p>
         </div>
-        <li class="footer__list__title" id="footer__list__title2">
-          CATEGORIES <img src="images/sort-down-grey.svg" alt="" class="down_icon" id="down4" />
+        <li class="mobile--footer__list__title" id="mobile--footer__list__title2">
+          CATEGORIES <img src="images/sort-down-grey.svg" class="down_icon" id="down4" />
         </li>
-        <div id="footer__list2">
-          <a href="404 page.html" class="footer__list__item">Accessories</a>
-          <a href="404 page.html" class="footer__list__item">Alcohol</a>
-          <a href="404 page.html" class="footer__list__item">Art</a>
-          <a href="404 page.html" class="footer__list__item">Books</a>
-          <a href="404 page.html" class="footer__list__item">Drink</a>
-          <a href="404 page.html" class="footer__list__item">Electronics</a>
-          <a href="404 page.html" class="footer__list__item">Flowers & Plants</a>
-          <a href="404 page.html" class="footer__list__item">Food</a>
+        <div id="mobile--footer__list2">
+          <a href="404 page.html" class="mobile--footer__list__item">Accessories</a>
+          <a href="404 page.html" class="mobile--footer__list__item">Alcohol</a>
+          <a href="404 page.html" class="mobile--footer__list__item">Art</a>
+          <a href="404 page.html" class="mobile--footer__list__item">Books</a>
+          <a href="404 page.html" class="mobile--footer__list__item">Drink</a>
+          <a href="404 page.html" class="mobile--footer__list__item">Electronics</a>
+          <a href="404 page.html" class="mobile--footer__list__item">Flowers & Plants</a>
+          <a href="404 page.html" class="mobile--footer__list__item">Food</a>
         </div>
-        <li class="footer__list__title" id="footer__list__title3">
-          ABOUT <img src="images/sort-down-grey.svg" alt="" class="down_icon" id="down5" />
+        <li class="mobile--footer__list__title" id="mobile--footer__list__title3">
+          ABOUT <img src="images/sort-down-grey.svg" class="down_icon" id="down5" />
         </li>
-        <div id="footer__list3">
-          <a href="404 page.html" class="footer__list__item">Company</a>
-          <a href="404 page.html" class="footer__list__item">Library</a>
-          <a href="404 page.html" class="footer__list__item">Contact Us</a>
+        <div id="mobile--footer__list3">
+          <a href="404 page.html" class="mobile--footer__list__item">Company</a>
+          <a href="404 page.html" class="mobile--footer__list__item">Library</a>
+          <a href="404 page.html" class="mobile--footer__list__item">Contact Us</a>
         </div>
       </ul>
 
-      <div class="flex-row footer__social__container">
-        <a href="https://www.facebook.com/OSFDigital/"><i class="fab fa-facebook-f footer__social"></i></a>
-        <a href="https://www.youtube.com/c/OSFDigital"><i class="fab fa-google-plus-g footer__social"></i></a>
-        <a href="https://twitter.com/osfdigital"><i class="fab fa-twitter footer__social"></i></a>
-        <a href="https://www.linkedin.com/company/osf-digital/"><i class="fab fa-pinterest-p footer__social"></i></a>
+      <div class="flex-row mobile--footer__social__container">
+        <a href="https://www.facebook.com/OSFDigital/"><i class="fab fa-facebook-f mobile--footer__social"></i></a>
+        <a href="https://www.youtube.com/c/OSFDigital"><i class="fab fa-google-plus-g mobile--footer__social"></i></a>
+        <a href="https://twitter.com/osfdigital"><i class="fab fa-twitter mobile--footer__social"></i></a>
+        <a href="https://www.linkedin.com/company/osf-digital/"
+          ><i class="fab fa-pinterest-p mobile--footer__social"></i
+        ></a>
       </div>
     </footer>
-    <!-- footer end -->
+    <!-- mobile footer end -->
+
+    <!-- fullscreen footer start -->
+    <footer class="fullscreen--footer">
+      <div>
+      <p>
+        &copy; Copyright <span class="year"></span>.<br />
+        All Rights Reserved.
+      </p>
+        <p class="fullscreen--footer__list__title" >
+          CONTACT
+        </p>
+        <div>
+          <p class="fullscreen--footer__list__item">
+            Headquarters: <br />
+            5600, Blvd. des Galeries, Bur 530 <br />
+            Quebec, Quebec G2K 2H6
+          </p>
+          <p class="fullscreen--footer__list__item">contact@osf-global.com</p>
+          <p class="fullscreen--footer__list__item">+1 (888) 548-4344</p>
+        </div>
+      </div>
+
+        <!-- <div class="fullscreen--footer__links__container"> -->
+        
+        <div class="fullscreen--footer__links">
+          <p class="fullscreen--footer__list__title" >
+            CATEGORIES
+          </p>
+          <a href="404 page.html" class="fullscreen--footer__list__item">Alcohol</a>
+          <a href="404 page.html" class="fullscreen--footer__list__item">Art</a>
+          <a href="404 page.html" class="fullscreen--footer__list__item">Books</a>
+          <a href="404 page.html" class="fullscreen--footer__list__item">Drink</a>
+          <a href="404 page.html" class="fullscreen--footer__list__item">Electronics</a>
+        </div>
+
+<div class="fullscreen--footer__links">
+        <a href="404 page.html" class="fullscreen--footer__list__item">Home</a>
+          <a href="404 page.html" class="fullscreen--footer__list__item">Jewelry</a>
+          <a href="404 page.html" class="fullscreen--footer__list__item">Kids & Baby</a>
+          <a href="404 page.html" class="fullscreen--footer__list__item">Men's Fashion</a>
+          <a href="404 page.html" class="fullscreen--footer__list__item">Mobile</a>
+          <a href="404 page.html" class="fullscreen--footer__list__item">Motorcycles</a>
+          <a href="404 page.html" class="fullscreen--footer__list__item">Movies</a>
+          <a href="404 page.html" class="fullscreen--footer__list__item">Music</a>
+        </div>
+
+        <div class="fullscreen--footer__links">
+          <a href="404 page.html" class="fullscreen--footer__list__item">Sport</a>
+          <a href="404 page.html" class="fullscreen--footer__list__item">Toys</a>
+          <a href="404 page.html" class="fullscreen--footer__list__item">Travel</a>
+          <a href="404 page.html" class="fullscreen--footer__list__item">Women's Fashion</a>
+        </div>
+
+        </div>
+       
+        <div class="fullscreen--footer__links">
+          <p class="fullscreen--footer__list__title" >
+            ABOUT
+          </p>
+          <a href="404 page.html" class="fullscreen--footer__list__item">About us</a>
+          <a href="404 page.html" class="fullscreen--footer__list__item">Delivery</a>
+          <a href="404 page.html" class="fullscreen--footer__list__item">Testimonials</a>
+          <a href="404 page.html" class="fullscreen--footer__list__item">Contact</a>
+        </div>
+    <!-- </div> -->
+
+      <div class="flex-row fullscreen--footer__social__container">
+        <a href="https://www.facebook.com/OSFDigital/"><i class="fab fa-facebook-f fullscreen--footer__social"></i></a>
+        <a href="https://www.youtube.com/c/OSFDigital"
+          ><i class="fab fa-google-plus-g fullscreen--footer__social"></i
+        ></a>
+        <a href="https://twitter.com/osfdigital"><i class="fab fa-twitter fullscreen--footer__social"></i></a>
+        <a href="https://www.linkedin.com/company/osf-digital/"
+          ><i class="fab fa-pinterest-p fullscreen--footer__social"></i
+        ></a>
+      </div>
+    </footer>
+
+    <!-- fullscreen footer end -->
 
     <!-- mobile icons start -->
     <div class="mobile__icons">
       <ul>
         <a href="#"><i class="fas fa-search mobile__icon"></i></a>
         <a href="#"><i class="far fa-user mobile__icon"></i></a>
-        <a href="#"><i class="far fa-heart mobile__icon"></i></a>
-        <a href="#"><i class="fas fa-shopping-bag mobile__icon"></i></a>
+        <a href="#"><i class="far fa-heart mobile__icon"></i><span class="numbers favorites"></span></a>
+        <a href="#"><i class="fas fa-shopping-bag mobile__icon"></i><span class="numbers cart"></span></a>
       </ul>
     </div>
     <!-- mobile icons end -->
 
+    <!-- sign up form start -->
+
+    <div class="sign_form hide">
+      <h2 class="sign_form__heading">Sign in</h2>
+      <div class="sign_form__inputs">
+    
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" class="sign_form__email">
+    </div>
+    <div class="sign_form__inputs">
+    <label for="password">Password</label>
+    <a class="sign_form__password" href="#">Forgot password?</a>
+    <input type="password" id="password" name="password" class="sign_form__pass">
+    <i class="far fa-eye sign_form__icon"></i>
+    </div>
+    
+    <div class="sign_form__buttons">
+    <button type="button" class="sign_form__btn">LOGIN</button>
+    <a href="#" class="sign_form__acc">I don't have an account</a>
+    </div>
+    </div>
+    <!-- sign up form end -->
+
+    <!-- cookies start -->
+    <div class="cookies hide">
+<h3 class="cookies__heading">This website uses cookies</h3>
+<i class="fas fa-times cookies__icon "></i>
+<p class="cookies__p">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque autem nisi architecto adipisci nobis dolorem itaque tempora? Qui, itaque sit eos vitae fuga suscipit eaque, facere incidunt eligendi deleniti labore! You can expand this information consulting our <a href="#" class="cookies__link">Cookies Policy Page</a></p>
+<button class="cookies__btn">ACCEPT</button>
+    </div>
+        <!-- cookies end -->
+
     <!-- scripts -->
     <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
       crossorigin="anonymous"
     ></script>
     <script src="js/all.js"></script>
+    <script src="js/index.js"></script>
     <script src="https://kit.fontawesome.com/86b430232a.js" crossorigin="anonymous"></script>
   </body>
 </html>
