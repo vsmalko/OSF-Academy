@@ -73,14 +73,26 @@ items[0].style.display = "flex";
 let counter = 0;
 
 function timer () {
+console.log('counter1', counter);
+
   counter++;
+
+console.log("counter2", counter);
+
   if (counter > items.length - 1) {
     counter = 0;
     items[2].style.display = "none";
+  console.log(" items[2]",  items[2]);
+
   }
+console.log("counter3", counter);
+
+
   items[counter].style.display = "flex";
   items[counter - 1].style.display = "none";
 };
+
+
 window.setInterval(timer, 5000)
 
 let left = document.querySelector(".controls__left");
